@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns:  100px 100px 100px ;
+  grid-template-rows: 100px 100px 100px ;
+  gap: 10px;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px; 
+}
+.grid-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.personturn{
+    max-width: 500px;
+    margin: auto;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<script>
+    var boardA = ['n', 'n', 'n']
+    var boardB = ['n', 'n', 'n']
+    var boardC = ['n', 'n', 'n']
+    var turn =0;
+    function checkMove(){
+        turn = turn+1;
+        console.log(turn)
+        var turntext = document.getElementById('turn')
+        var move = document.getElementById('input').value
+        var pointer = document.getElementById(move)
+        if(turn%2 ==0){
+            if(move == 'A1'){
+                pointer.innerHTML = 'O';
+                boardA[0] = 0;
+            }
+            if(move == 'A2'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'A3'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'B1'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'B2'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'B3'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'C1'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'C2'){
+                pointer.innerHTML = 'O';
+            }
+            if(move == 'C3'){
+                pointer.innerHTML = 'O';
+            }
+            turntext.innerHTML = "Player 1";
+        }else{
+            if(move == 'A1'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'A2'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'A3'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'B1'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'B2'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'B3'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'C1'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'C2'){
+                pointer.innerHTML = 'x';
+            }
+            if(move == 'C3'){
+                pointer.innerHTML = 'x';
+            }
+            turntext.innerHTML = "Player 2";
+        }
+        
+    }
+</script>
+</head>
+<body>
+ <h1> TicTacToe Board Game (js, html, css version)</h1>
+<div class="grid-container">
+  <div id = 'A1'>A1</div>
+  <div id = 'A2'>A2</div>
+  <div id = 'A3'>A3</div>  
+  <div id = 'B1'>B1</div>
+  <div id = 'B2'>B2</div>
+  <div id = 'B3'>B3</div>  
+  <div id = 'C1'>C1</div>
+  <div id = 'C2'>C2</div>
+  <div id = 'C3'>C3</div>  
+</div>
+<div class ="personturn">
+    <span id= turn>Player 1</span>
+    <input type="text" id="input"  minlength="2" required>
+    <button type="submit" onclick="checkMove()">Submit</button>  
+</div>
+</body>
+</html>
+
+
